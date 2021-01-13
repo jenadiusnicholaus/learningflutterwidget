@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learndartandflutter/pages/bottomnav.dart';
+import 'package:learndartandflutter/pages/card.dart';
 import 'package:learndartandflutter/pages/datatable.dart';
 import 'package:learndartandflutter/pages/drawer.dart';
+import 'package:learndartandflutter/pages/mygrid.dart';
 import 'package:learndartandflutter/pages/mytabs.dart';
 
 class BtnNavs extends StatefulWidget {
@@ -79,7 +81,14 @@ class _BtnNavsState extends State<BtnNavs> {
             ),
             child: Center(child: Text('Bottom nav bar', style: optionStyle)),
           ),
-        ),GestureDetector(
+        ),
+
+
+        GestureDetector(
+
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>MyCards()));
+          },
           child: Container(
             margin: EdgeInsets.only(bottom: 3.0),
             height: 100,
@@ -88,9 +97,13 @@ class _BtnNavsState extends State<BtnNavs> {
                 color: Colors.blue,
                 borderRadius: BorderRadius.all(Radius.circular(20))
             ),
-            child: Center(child: Text('datatable', style: optionStyle)),
+            child: Center(child: Text('Card', style: optionStyle)),
           ),
         ),GestureDetector(
+
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>MyGrid()));
+          },
           child: Container(
             margin: EdgeInsets.only(bottom: 3.0),
             height: 100,
@@ -99,7 +112,7 @@ class _BtnNavsState extends State<BtnNavs> {
                 color: Colors.blue,
                 borderRadius: BorderRadius.all(Radius.circular(20))
             ),
-            child: Center(child: Text('datatable', style: optionStyle)),
+            child: Center(child: Text('Grid', style: optionStyle)),
           ),
         ),GestureDetector(
           child: Container(
